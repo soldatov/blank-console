@@ -1,0 +1,14 @@
+variables:
+  VERSION_APP: 0.1.0
+
+stages:
+  - build
+
+build:
+  stage: build
+  only:
+    refs:
+      - master
+  script:
+    - docker build --tag blank_console:${VERSION_APP}
+    - doker run --rm blank_console php console ping
