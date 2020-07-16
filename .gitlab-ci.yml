@@ -10,5 +10,6 @@ build:
     refs:
       - master
   script:
-    - docker build --tag blank_console:${VERSION_APP}
-    - doker run --rm blank_console php console ping
+    - cp ./.env.distrib ./.env
+    - docker build --tag blank_console:${VERSION_APP} .
+    - docker run --rm blank_console:${VERSION_APP} php console ping
