@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -12,7 +13,7 @@ if (file_exists(__DIR__ . '/.env')) {
     $dotenv->usePutenv()->load(__DIR__ . '/.env');
 }
 
-$app = new Application();
-$app->add(new PingCommand());
-$app->add(new EnvCommand());
-$app->run();
+$application = new Application();
+$application->add(new PingCommand());
+$application->add(new EnvCommand());
+$application->run();

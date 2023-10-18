@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  nginx:
+    container_name:  blank-console
+    image:  soldatovdev/blank-console
+    build:
+      context: ./docker/dev/php
+    volumes:
+      - .:/app
